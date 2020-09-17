@@ -1,23 +1,14 @@
 //
-//  files.h
+//  files.c
 //  
 //
 //  Created by Cesar Angeles on 07/09/2020.
 //
 
-#ifndef files_h
-#define files_h
 
-#include <stdio.h>
+#define files_IMPORT
+#include "files.h"
 
-#ifdef files_IMPORT
-    #define EXTERN
-#else
-    #define EXTERN extern
-#endif
-
-
-/* files.h -- Function prototypes */
 
 /**
  * Instanciates a new file pointer identified via its name and mode.
@@ -42,7 +33,6 @@ FILE * file_new(char *name, char *mode){
     else
         return my_file;
 }
-
 
 
 /**
@@ -70,10 +60,3 @@ void file_num_write(FILE * file, size_t columns, long double buff[][columns], si
         fprintf(file, "\n");
     }
 }
-
-#undef files_IMPORT
-#undef EXTERN
-
-
-
-#endif /* files_h */
